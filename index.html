@@ -30,12 +30,11 @@
                 <ion-icon x-show="mute==true" class="text-2xl text-blue-500" name="volume-high-outline"></ion-icon>
                 <ion-icon x-show="mute==false" class="text-2xl" name="volume-mute-outline"></ion-icon>
                 <span x-show="mute==true" class="text-blue-500 text-sm font-medium">Mute</span>
-                <span x-show="mute!=true" >Mute</span>
+                <span x-show="mute!=true " >Mute</span>
             </button>
-            <button x-on:click="mute=!mute" x-data="{mute:true}" class="text-lg z-50 bg-white p-2 rounded-xl hover:scale-105 duration-150 shadow-lg ease-in-out flex items-center gap-2 font-semibold">
+            <button class="text-lg z-50 bg-white p-2 rounded-xl hover:scale-105 duration-150 shadow-lg ease-in-out flex items-center gap-2 font-semibold">
                 <ion-icon class="text-2xl" name="repeat-outline"></ion-icon>
-                <span x-show="mute==true" class="text-sm font-medium">Replay</span>
-                <span x-show="mute!=true" >Mute</span>
+                <span class="text-sm font-medium">Replay</span>
             </button>
         </div>
 
