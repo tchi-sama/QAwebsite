@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/289c1826d1.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="output.css">
+
+
+
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+
+</head>
+<body class="bg-gray-100 relative">
+
+
+
+
+
+
+<section class="container mx-auto flex flex-col  text-gray-500  min-h-screen">
+        <div class="py-10 w-full absolute top-0 z-50 container  left-[50%] translate-x-[-50%] flex px-8 flex-row justify-between items-center">
+            <h1 class="text-xl font-bold">LOGO</h1>
+            <button x-on:click="mute=!mute" x-data="{mute:true}" class="text-lg z-50 bg-white p-2 rounded-xl hover:scale-105 duration-150 shadow-lg ease-in-out flex items-center gap-2 font-semibold">
+                <ion-icon x-show="mute==true" class="text-2xl text-blue-500" name="volume-high-outline"></ion-icon>
+                <ion-icon x-show="mute==false" class="text-2xl" name="volume-mute-outline"></ion-icon>
+                <span x-show="mute==true" class="text-blue-500">Mute</span>
+                <span x-show="mute!=true" >Mute</span>
+            </button>
+        </div>
+
+        <div class="flex flex-col relative h-screen flex-1 items-center overflow-hidden ">
+                <video class="h-screen" autoplay>
+                    <source src="./qVideos/(4).mp4" type="video/mp4">
+                </video>
+        </div>
+
+
+
+
+        
+                <!-- <div x-data="{input:''}" class="absolute bottom-0 flex flex-col items-center p-4 max-w-xl w-full left-[50%] translate-x-[-50%]">
+                    <h1 class="text-lg drop-shadow-md">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui quas praesentium quasi </h1>
+                    <input x-model="input" placeholder="Answer here " class="w-full px-4 text-lg max-w-xl text-gray-700 font-semibold border outline-blue-500 p-2 shadow-lg rounded-md">
+                    <div class="p-2 mt-2 w-full flex justify-between items-center">
+                        <div class="flex gap-2"> 
+                            <div class="w-2 h-2 rounded-full bg-blue-300"></div>
+                            <div class="w-2 h-2 rounded-full bg-blue-300"></div>
+                            <div class="w-8 h-2 rounded-full bg-blue-500"></div>
+                            <div class="w-2 h-2 rounded-full bg-blue-300"></div>
+                        </div>
+                        <button :disabled="input==''" class="px-4 py-2 shadow-lg text-lg rounded-xl text-white" :class="(input!='') ? 'bg-blue-500':'bg-gray-400'">Next</button>
+                    </div>
+                </div> -->
+
+
+                <!-- <div x-data="{selected:null,options:['option 1','option 2','option 3','option 4']}" class="absolute bottom-0 flex flex-col items-center p-4 max-w-xl w-full left-[50%] translate-x-[-50%]">
+                    <h1 class="text-lg drop-shadow-md py-2">Lorem ipsum dolor sit,</h1>
+                    <div class="grid grid-cols-2 w-full gap-2" >
+                        <template x-for="option in options">
+                            <button x-on:click="selected=option" x-text="option" class="px-4 py-2 shadow-xl border-2 border-gray-500 bg-white text-lg rounded-xl" :style="{background:option==selected&&'rgb(59 130 246)',color:option==selected&&'white'}">option 1</button>
+                        </template>
+                    </div>
+                    <div class="p-2 mt-2 w-full flex justify-between items-center">
+                        <div class="flex gap-2"> 
+                            <div class="w-2 h-2 rounded-full bg-blue-300"></div>
+                            <div class="w-2 h-2 rounded-full bg-blue-300"></div>
+                            <div class="w-8 h-2 rounded-full bg-blue-500"></div>
+                            <div class="w-2 h-2 rounded-full bg-blue-300"></div>
+                        </div>
+                        <button :disabled="selected==null" class="px-4 py-2 shadow-lg text-lg rounded-xl text-white" :class="(selected!=null) ? 'bg-blue-500':'bg-gray-400'">Next</button>
+                    </div>
+                </div> -->
+
+
+                <div x-data="{year:'',month:'',day:''}" class="absolute bg-[#fff0]  bottom-0 flex flex-col items-center p-4 max-w-xl w-full left-[50%] translate-x-[-50%]">
+                    <h1 class="text-lg drop-shadow-md text-white">Lorem ipsum dolor sit, </h1>
+                    <div class="flex px-1 gap-2 items-center py-1 shadow-xl bg-white border-2 rounded-xl">
+                    <input x-model="day" placeholder="dd" class=" w-12 text-center px-2  max-w-xl text-gray-700 font-semibold border-2 outline-blue-500 p-2 bg-gray-100  rounded-md">
+                    <span class="text-3xl">/</span>
+                    <input x-model="month" placeholder="mm" class="w-12 text-center px-2  max-w-xl text-gray-700 font-semibold border-2 outline-blue-500 p-2 bg-gray-100 rounded-md">
+                    <span class="text-3xl">/</span>
+                    <input x-model="year" placeholder="yy " class=" w-20 text-center px-2  max-w-xl text-gray-700 font-semibold border-2 outline-blue-500 p-2 bg-gray-100 rounded-md">
+
+                    </div>
+
+                    <div class="p-2 mt-2 w-full flex justify-between items-center ">
+                        <div class="flex gap-2 bg-white p-2 rounded-xl"> 
+                            <div class="w-2 h-2 rounded-full bg-blue-500"></div>
+                            <div class="w-2 h-2 rounded-full bg-blue-500"></div>
+                            <div class="w-8 h-2 rounded-full bg-blue-500"></div>
+                            <div class="w-2 h-2 rounded-full bg-blue-500"></div>
+                        </div>
+                        <button  class="px-4 py-2 shadow-lg text-lg rounded-xl text-white" :class="(year!=''&&day!=''&&month!='') ? 'bg-blue-500':'bg-gray-400'">Next</button>
+                    </div>
+                    <button  class=" absolute -top-6 right-6 w-12 h-12 flex justify-center items-center shadow-lg bg-white text-3xl rounded-xl text-blue-500">
+                        <ion-icon name="repeat-outline"></ion-icon>
+                    </button>
+                </div>
+
+
+
+
+</section>
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+<!-- npx tailwindcss -i ./style.css -o ./output.css --watch -->
